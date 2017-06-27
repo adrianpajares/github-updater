@@ -850,9 +850,7 @@ class Base {
 		$header['host']       = isset( $header_parts['host'] ) ? $header_parts['host'] : null;
 		$header['owner']      = trim( $header_path['dirname'], '/' );
 		$header['repo']       = $header_path['filename'];
-		$header['owner_repo'] = isset( $header['owner'] )
-			? implode( '/', array( $header['owner'], $header['repo'] ) )
-			: null;
+		$header['owner_repo'] = implode( '/', array( $header['owner'], $header['repo'] ) );
 		$header['base_uri']   = str_replace( $header_parts['path'], '', $repo_header );
 		$header['uri']        = isset( $header['scheme'] ) ? trim( $repo_header, '/' ) : null;
 
